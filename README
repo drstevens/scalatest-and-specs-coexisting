@@ -1,0 +1,1 @@
+This is a simple project to understand why mocks created in ceratin ways with ScalaTest's MockitoSugar are broken when Specs2 is added as a dependency.
