@@ -15,8 +15,8 @@ object ScalatestandspecscoexistingBuild extends Build {
       organization := "com.bifflabs",
       version := "0.1-SNAPSHOT",
       scalaVersion := "2.9.2",
-//      libraryDependencies ++= Seq(scalaTest, mockito)
-      libraryDependencies ++= Seq(specs2, scalaTest, mockito)
+//      libraryDependencies ++= Seq(scalaTest, mockito)   //Tests pass
+      libraryDependencies ++= Seq(specs2, scalaTest, mockito)  //Tests fail
     )
   )
 }

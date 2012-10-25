@@ -32,9 +32,9 @@ class MockSuite extends FunSuite with ShouldMatchers with MockitoSugar {
   when(mockMockingBird.sing(beatingDeadHorse)).thenReturn(bringinMeDown)
 
   test("A mock should match on parameter but isn't") {
-    assert(mockMockingBird.sing(Set.empty) === bringinMeDown)
+    assert(mockMockingBird.sing(Set.empty) === null)
     assert(mockMockingBird.sing(beatingDeadHorse) === bringinMeDown)
-    assert(mockMockingBird.sing(iWannaRock) === bringinMeDown)
+    assert(mockMockingBird.sing(iWannaRock) === rock)
   }
 
   val mockMockingBirdWithStrings = mock[MockingBirdWithStrings]
