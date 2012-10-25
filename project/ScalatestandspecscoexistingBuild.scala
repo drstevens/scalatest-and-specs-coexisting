@@ -1,5 +1,6 @@
 import sbt._
 import sbt.Keys._
+import net.virtualvoid.sbt.graph.{Plugin => GraphPlugin}
 
 object ScalatestandspecscoexistingBuild extends Build {
 
@@ -10,13 +11,16 @@ object ScalatestandspecscoexistingBuild extends Build {
   lazy val scalatestandspecscoexisting = Project(
     id = "scalatest-and-specs-coexisting",
     base = file("."),
-    settings = Project.defaultSettings ++ Seq(
+    settings = Project.defaultSettings ++
+      GraphPlugin.graphSettings ++
+      Seq(
       name := "Scalatest-And-Specs-Coexisting",
       organization := "com.bifflabs",
-      version := "0.1-SNAPSHOT",
+      version := "0.1",
       scalaVersion := "2.9.2",
-//      libraryDependencies ++= Seq(scalaTest, mockito)   //Tests pass
-      libraryDependencies ++= Seq(specs2, scalaTest, mockito)  //Tests fail
+//      libraryDependencies ++= Seq(scalaTest, mockito)   //Tests Pass
+//      libraryDependencies ++= Seq(scalaTest, mockito, specs2)  //Tests Pass?!?
+      libraryDependencies ++= Seq(scalaTest, specs2, mockito)  //Tests Fail
     )
   )
 }
